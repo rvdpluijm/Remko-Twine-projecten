@@ -1,0 +1,42 @@
+<tw-storydata name="Dan wordt geluk heel gewoon" startnode="2" creator="Twine" creator-version="2.0.11" ifid="885C2491-9C43-42E0-90B9-7C631CDF0EB6" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Begin" tags="startup" position="116,224">##Januari
+
+//2016, een klein nest, ergens in het Loetbos in de groene Krimpenerwaard. Terwijl de zon langzaam door de bomen begint te schijnen en de meest ijzige kou te verdwijnen. Middenin het bos, in een boomholte op de hoek van Loet en Kerkweg, bevindt zich een boomholte waar de pimpelmeesfamilie zich gevestigd heeft.//
+
+(click: &quot;gevestigd&quot;)[#Dan wordt geluk heel gewoon&lt;br&gt;//Een interactief verhaal over hoop//]
+
+
+
+(click: &quot;interactief verhaal&quot;)[### //Geschreven voor mijn allerliefste tortelduif, dat de tijd in ons voordeel mag werken//]
+
+(set: $emotie to &quot;&quot;, $emotiewaarde to 1, $papastress to 3, $mamastress to 2, $babystress to 2, $geluk to 3, $hoop to 5)</tw-passagedata>
+<tw-passagedata pid="2" name="Winter" tags="" position="299,232">Het is een dag zoals geen ander. Het mannetje moet aan het werk voor de taken in zijn groep, waarin er een aantal bazige andere mannetjes zitten die hem soms het leven zuur maken. Hij heeft wel gekeken om te gaan helpen bij een andere groep, maar daar werd hij, na hard gewerkt te hebben, alsnog opzij geschoven. 
+
+Tegelijk moet het wijfje weer aan de slag in het nest. De boomholte heeft een hoop voedselresten en overgebleven nestmateriaal liggen, maar er is geen kans toe geweest om deze producten op te ruimen. Zwijgend tuurt ze over de rand van het nest heen. Eigenlijk zou ze zich moeten richten op de zaken in het nest, maar het wijfje van de overkant heeft het nog zoveel zwaarder. Tegelijk begint het babyvogeltje, dat langzaam aan al flink gegroeid is, zich door het nest heen te woelen en stukjes bast van de boom af te pikken en in het nest te gooien.
+
+(click-append: &quot;zaken in het nest&quot;)[ (Normaal ruimt het mannetje ook mee op, maar al tijden lijkt hij daartoe niet in staat)]
+(click-append: &quot;zwaarder&quot;)[ (Ze heeft een zwaar voedseltekort en een mannetje dat niet kan helpen met fourageren)]
+
+Richt het wijfje zich:
+0. [Het verzorgen van haar eigen kroost?]&lt;kroost| Dat is immers haar belangrijkste.
+0. [Het nest op orde krijgen]&lt;nest| ook al zijn er nog zoveel andere zaken, inclusief haar kroost?
+0. [Het helpen van het andere wijfje]&lt;helpen|, dat grotere problemen heeft?
+
+(click: ?kroost)[(set: $mamastress to it + 1, $babystress to it -1, $papastress to it + 1) Met alle liefde die ze kan opbrengen verzorgt ze haar eigen kleine babyvogel, hoe ondeugend deze soms ook kan zijn. haar eigen nest is uiteindelijk het belangrijkste om te behouden. [[Langzaam aan wordt het lente|Lente]]]
+(click: ?nest)[(set: $mamastress to it + 2, $babystress to it +1, $papastress to it -1) Langzaam aan begint ze met haar taak. Het kost haar erg veel moeite en ze moet haar kroost continu een zetje in de goede richting zetten. Die avond kijkt het mannetje trots toe, maar voert zelf niets uit.  [[Langzaam aan wordt het lente|Lente]]]
+(click: ?helpen)[(set: $babystress to it +1, $papastress to it +1) Voor even voelt ze zich beter wanneer ze kort de taak op zich neemt van het andere wijfje en, waar ze probeert te genieten van de warme ontvangst, gaat haar gedachte toch steeds weer terug naar haar lieve kuikentje. Licht schuldig keert ze terug naar haar nest, alwaar het een flinke puinhoop is geworden. [[Langzaam aan wordt het lente|Lente]]]</tw-passagedata>
+<tw-passagedata pid="3" name="Lente" tags="" position="493,235">#Mei
+De meeste pimpelmeesfamilies genieten van de hernieuwde energie die tot ze komt wanneer ze de zachte lentezon op hun vleugels voelen. Toch is dat niet geheel het geval bij onze pimpelmeesfamlie. Het wijfje ziet haar kleintje met rasse schreden vooruit treden, maar tegelijk ziet ze een gebrek aan eetlust bij haar(if: $papastress &gt; 3)[; het helpt natuurlijk ook niet dat haar mannetje elke keer zo uitgeput thuis komt(if: $papastress &gt; 4)[. Al tijden is hij kortaf en ze is bang voor het schelle gezang tegen hun dochter]](if: $babystress &gt; 2)[; terwijl ze zo hun best doen om de wormen te laten doen smaken bij de kleine]. (if: $papastress + $mamastress + $babystress &gt; 9)[Langzaam aan begint de tijd zijn tol te eisen. Van een gebroken vleugel tot het schel zingen van papa wanneer de omstandigheden te zwaar zijn.]
+Toch gloort er hoop aan de horizon. Mogelijk mag het mannetje zich aansluiten bij een andere groep. Mag dit eindelijk leiden tot geluk?
+
+0. [Nee: al jaren is er verandering beloofd en nog nooit heeft dit voor verandering gezorgd. Dit is weer een korte nieuwe opleving.]&lt;Nee|
+0. [Wellicht niet, maar ze moeten erin blijven geloven dat het goed komt. Pimpelmeesjes blijven bij elkaar en voor hun dochter is dit essentieel.]&lt;Wellicht|
+0. [Ja: Nu zal de verandering komen! Eindelijk verlost van de miserie.]&lt;Ja| 
+
+(click:&quot;Nee&quot;)[(set: $hoop to it - 1) Niet langer lijkt er sprake van tot het einde bij elkaar willen blijven, maar eerder van gedoemd bij elkaar te moeten blijven. Het is een zure pruim om te slikken, maar beter dan dit zal het jammer genoeg niet worden.(replace: ?Wellicht)[Die kans is geweest.] (replace: ?Ja)[Naief en mogelijk zelfs blind voor de waarheid.] [[Nochtans wordt het zomer|Zomer]]]
+(click:&quot;Wellicht niet&quot;)[(set: $hoop to it + 1) Hoop zal er altijd blijven, omdat het er moet blijven, maar er is teveel tegenslag geweest om te geloven dat het mannetje in de nieuwe groep met zekerheid niet weer in een stresvolle situatie terecht komt. In de long run zullen ze samen het geluk vinden. (replace: ?Nee)[Waarom dan niet meteen weglopen?] (replace: ?Ja)[Dit is vaker gezegd.] [[Langzaam aan wordt het zomer|Zomer]]]
+(click:&quot;Ja&quot;)[(set: $hoop to it + 3, $papastress to -1) Ja, het zal gaan lukken, niet alleen om dat het moet lukken, maar omdat ze weer een flikkering terugzien bij hem die ze hiervoor niet zagen. [[Vol verwachting wordt het zomer|Zomer]]] </tw-passagedata>
+<tw-passagedata pid="4" name="Zomer" tags="" position="670,244">##September
+(set: $papastress to it + 1, mamastress to it + 2)
+In het begin van de nazomer wordt pas de werkelijke impact duidelijk van de veranderingen die hebben plaatsgevonden.
+(if: $papastress &gt; $hoop)[De mooie heldere blauwe en gele kleur, die tijdens de winter verangen werden door iets soberdere kleuren, is nooit terug gekomen. De kleuren van het mannetje zien eruit alsof het getransformeerd is van een Pimpelmees in een Azuurmees.]</tw-passagedata>
+</tw-storydata>

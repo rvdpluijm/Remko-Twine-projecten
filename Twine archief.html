@@ -1,0 +1,117 @@
+<tw-storydata name="Dan wordt geluk heel gewoon" startnode="1" creator="Twine" creator-version="2.0.11" ifid="4F1444EC-20EA-4F43-8EE0-A48D6813B677" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+</script><tw-passagedata pid="1" name="Naamloze passage" tags="" position="498,208">(set: $Inventaris to (dataset:&quot;Toetie&quot;))
+
+//Krimpenerwaard, onze tijd. Terwijl donkere wolken zich samen pakken, komen duistere figuren samen in het Loetbos voor de voltooiing van een ritueel. Het heeft lang geduurd voordat de omstandigheden geschikt waren, maar hier is het moment dan toch gekomen. Terwijl de wind de gitzwarte kaarsen uitblaast, buldert een zware stem: // &quot;De Krimpenerwaard zal het begin zijn van onze expansie. Laat de wereld verdrinken in een cacafonie van woorden.&quot; //Slechts een familie zou in staat zijn om het tij te keren...
+
+
+De [[familie van der Pluijm|titelpagina]] uit Lekkerkerk...//
+</tw-passagedata>
+<tw-passagedata pid="2" name="Start" tags="" position="752,206">(set: $uitlocatie to &quot;&quot;, $blijdorptest to false)
+//Een dag ervoor//
+
+//&quot;Lieve Faye, waar wil je vandaag naar toe?&quot;// Als hoge uitzondering is er tijd voor een klein uitje. Lang hoeft ze niet te twijfelen: (text-style:&quot;shadow&quot;)[&quot;Glijbaan met ballen&quot;] fluistert ze fnuikend in je oor. Enigszins zuchtend kijk je me aan, wel wetend dat het voor haar een van de (link-reveal: &quot;ultieme uitjes&quot;)[(set: $blijdorptest to true) (naast natuurlijk Blijdorp)] is.
+
+* Op weg naar Bungelland dan maar...
+(click: &quot;natuurlijk Blijdorp&quot;)[(if: $uitlocatie is not &quot;Bungelland&quot; and $blijdorptest is true)[* Lieve Faye, wil je dan niet liever naar de dierentuin toe?]]
+
+Nou, kom op! We gaan op weg!
+
+(click:&quot;We gaan op weg!&quot;)[Langzaam aan maken we ons op voor $uitlocatie. Faye doet in eerste instantie wat moeilijk met haar schoenen aan doen //&quot;Maar mijn voeten doen toch wat pijn?!!&quot;//, loopt ze erg te dralen.]
+
+(click-append:&quot;te dralen&quot;)[,maar uiteindelijk, met de belofte dat //klein drinken// ook mee mag, rent ze enthousiast in de richting van de auto. Na een goed verlopen autorit stappen we(if: $uitlocatie is &quot;Blijdorp&quot;)[ [[de auto uit|Blijdorp]]](elseif: $uitlocatie is &quot;Bungelland&quot;)[ [[de auto uit|Bungelland]]]]
+
+(click-replace: &quot;klein drinken&quot;)[een (live: 1s)[(either: &quot;wiki&quot;,&quot;yoki&quot;,&quot;chocolademelk&quot;)](set: $Inventaris to it + (dataset: (either: &quot;Wiki&quot;,&quot;Yoki&quot;,&quot;Chocolademelk&quot;)))]
+
+
+(click: &quot;liever naar de dierentuin&quot;)[(set: $uitlocatie to &quot;Blijdorp&quot;)]
+(click: &quot;naar Bungelland&quot;)[(set: $uitlocatie to &quot;Bungelland&quot;)]
+
+
+
+
+
+
+
+</tw-passagedata>
+<tw-passagedata pid="3" name="Menu" tags="header" position="231,204">(link:&quot;Inventaris&quot;)[(print: ...$Inventaris)]
+</tw-passagedata>
+<tw-passagedata pid="4" name="A header" tags="startup" position="226,337">(set: $Inventaris to (dataset:&quot;leeg&quot;))
+</tw-passagedata>
+<tw-passagedata pid="5" name="titelpagina" tags="" position="627,207">&lt;h2&gt;Queeste tegen het schreeuwmonster&lt;br&gt;&lt;br&gt;Een interactief verhaal van [Remko van der Pluijm]&lt;ik|&lt;/h2&gt;
+
+(click: ?ik)[Voor mijn liefste, opdat zij met een lach en een traan terug kan kijken naar het afgelopen jaar. [[Naar de start van het verhaal|Start]].]</tw-passagedata>
+<tw-passagedata pid="6" name="Blijdorp" tags="" position="752,356">(if: (random: 1,12) is 12)[(set: $Inventaris to it - (dataset:&quot;Toetie&quot;), $Toetielocatie to &quot;Blijdorp&quot;)]
+//Blijdorp, Biotopia//
+Tevreden glijdt Faye van de hoogste glijbaan af. Ergens onder de glijbaan zwerven de kledingstukken van haar rond. Terwijl ik een kop koffie aan het halen ben, voel je plotseling een vreemd gevoel vanaf achteren...
+
+(if: $fototest is false)[* [[Ik kijk naar achteren om te zien wat er gebeurt.| Foto]] ]
+(if: $fototest is false)[* [[Ik voel met mijn hand op mijn rug om het vervelende gevoel weg te halen.| Foto]] ]
+(if: $fototest is true)[* [[Ik zoek Faye en jou op en ik wil zo snel mogelijk weg van hier. | Op weg naar huis]] ]
+(if: $fototest is true)[* [[ Ik wil je even alleen spreken.| Overleg]] ]
+
+
+
+
+
+
+
+
+
+
+(click-replace: &quot;kledingstukken&quot;)[sokken en schoenen]</tw-passagedata>
+<tw-passagedata pid="7" name="Bungelland" tags="" position="916,322">(if: (random: 1,12) is 12)[(set: $Inventaris to it - (dataset:&quot;Toetie&quot;), $Toetielocatie to &quot;Bungelland&quot;)]
+//Bungelland//
+Tevreden speelt Faye in de ballenbak. Terwijl ik met haar aan het spelen ben en je zelf koffie aan het halen bent, voel je plotseling een vreemd gevoel vanaf achteren...
+
+(if: $fototest is false)[* [[Ik kijk naar achteren om te zien wat er gebeurt.| Foto]] ]
+(if: $fototest is false)[* [[Ik voel met mijn hand op mijn rug om het vervelende gevoel weg te halen.| Foto]] ]
+(if: $fototest is true)[* [[Ik zoek Faye en jou op en ik wil zo snel mogelijk weg van hier. | Op weg naar huis]] ]
+(if: $fototest is true)[* [[ Ik wil je even alleen spreken.| Overleg]] ]
+
+
+
+
+
+
+
+
+
+
+(click-replace: &quot;kledingstukken&quot;)[sokken en schoenen]</tw-passagedata>
+<tw-passagedata pid="8" name=" Foto" tags="" position="617,506">(set: $fototest to true, $Inventaris to it + (dataset: &quot;Foto van Faye&quot;), $wapensbekend to false)
+In de wijde omgeving is niemand te zien die ook maar iets met je gedaan zou kunnen hebben. Als je gaat staan en je je jas uittrekt voel je een jeukend gevoel op je rug. (click: &quot;jeukend&quot;)[&#39;&#39;Blijkbaar heeft iemand een foto achter je rug gestopt!&#39;&#39; Eerst glimlach je nog wanneer je aan Faye d&#39;r rare spelletje denkt. Wanneer je de foto bekijkt, vergaat het lachen je. De foto is weliswaar van een slechte kwaliteit, maar overduidelijk is daar Faye te zien terwijl ze slaapt in een foto die je nog nooit hebt gezien. D&#39;r (link:&quot;wapens&quot;)[toverstaf en kanon (set: $wapensbekend to true)] zijn omcirkeld en in bloedrode letters staat er &quot;help&quot; geschreven.] 
+
+(click-append: &quot;Faye d&#39;r rare spelletje&quot;)[ (//Even een foto instoppen...//)]
+(link-goto: &quot;Wat moet je nu doen?&quot;, $uitlocatie))
+
+(click-append: &quot;wijde omgeving&quot;)[ (het is een rustige dinsdagochtend en we hebben het rijk zo goed als alleen in (if: $uitlocatie is &quot;Blijdorp&quot;)[Biotopia](else:)[Bungelland].]
+(click-prepend: &quot;jas&quot;)[mooie (maar zware) gele winter]</tw-passagedata>
+<tw-passagedata pid="9" name=" Op weg naar huis" tags="" position="758,533">Klik twee keer op deze passage om het aan te passen.</tw-passagedata>
+<tw-passagedata pid="10" name=" Overleg" tags="" position="902,506">Je wacht onrustig tot ik terug ben en laat Faye even verder spelen.
+
+Wanneer ik terug ben haal je diep adem, waarna je:
+
+* [de foto laat zien die je gevonden hebt en mij vraagt naar mijn mening.]&lt;tonen|
+* [je vertelt van de foto en mij eerst probeert te kalmeren.]&lt;kalmeren|
+(if: $wapensbekend)[* de foto bij de hand neemt en wijst me op het feit dat de wapens omcirkeld zijn.]
+
+(click: ?tonen)[(set: $mood to &quot;angstig&quot;)Met open mond kijk ik naar de foto. Je ziet aan mijn gezicht dat mijn ademhaling begint te versnellen en ik weer tic-matig naar mijn borstkas grijp. Nog net op tijd weet je me te kalmeren. Dan, wanneer ik even rustig, maar overduidelijk op mijn hoede, ben, vraag ik: //&quot;Waar is Faye? Ik wil [[hier vandaan|Op weg naar huis]].&quot;//]
+(click: ?kalmeren)[(set: $mood to &quot;sereen&quot;)Vertwijfeld kijk ik naar de foto. //&quot;Wel ziek dat ze die foto zo aan jou op deze manier bezorgen. Normaal had ik daar wel mee kunnen lachen, maar dit is close.&quot;// Zoveel mensen kunnen toch niet weten hiervan. En wat betekent dit? ]
+(click: &quot;wijst me op het feit dat de wapens omcirkeld zijn&quot;)[(set: $mood to &quot;intelligent&quot;)]
+
+
+
+
+
+
+
+
+
+(click-append:</tw-passagedata>
+<tw-passagedata pid="11" name="Op weg naar huis" tags="" position="902,656">Klik twee keer op deze passage om het aan te passen.</tw-passagedata>
+</tw-storydata>
+
+

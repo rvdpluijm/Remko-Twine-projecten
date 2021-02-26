@@ -1,0 +1,156 @@
+<tw-storydata name="Dan wordt geluk heel gewoon" startnode="1" creator="Twine" creator-version="2.0.11" ifid="4F1444EC-20EA-4F43-8EE0-A48D6813B677" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+</script><tw-passagedata pid="1" name="Naamloze passage" tags="" position="498,208">(set: $Inventaris to (dataset:&quot;Toetie&quot;))
+
+//Krimpenerwaard, onze tijd. Terwijl donkere wolken zich samen pakken, komen duistere figuren samen in het Loetbos voor de voltooiing van een ritueel. Het heeft lang geduurd voordat de omstandigheden geschikt waren, maar hier is het moment dan toch gekomen. Terwijl de wind de gitzwarte kaarsen uitblaast, buldert een zware stem: // &quot;De Krimpenerwaard zal het begin zijn van onze expansie. Laat de wereld verdrinken in een cacafonie van woorden.&quot; //Slechts een familie zou in staat zijn om het tij te keren...
+
+
+De [[familie van der Pluijm|titelpagina]] uit Lekkerkerk...//
+</tw-passagedata>
+<tw-passagedata pid="2" name="Start" tags="" position="752,206">(set: $uitlocatie to &quot;&quot;, $blijdorptest to false, $fototest to false, $overleg to false)
+//Een dag ervoor//
+
+//&quot;Lieve Faye, waar wil je vandaag naar toe?&quot;// Als hoge uitzondering is er tijd voor een klein uitje. Lang hoeft ze niet te twijfelen: (text-style:&quot;blur&quot;)[&quot;Glijbaan met ballen&quot;] fluistert ze fnuikend in je oor. Enigszins zuchtend kijk je me aan, wel wetend dat het voor haar een van de (link-reveal: &quot;ultieme uitjes&quot;)[(set: $blijdorptest to true) (naast natuurlijk Blijdorp)] is.
+
+* Op weg naar Bungelland dan maar...
+(click: &quot;natuurlijk Blijdorp&quot;)[(if: $uitlocatie is not &quot;Bungelland&quot; and $blijdorptest is true)[* Lieve Faye, wil je dan niet liever naar de dierentuin toe?]]
+
+Nou, kom op! We gaan op weg!
+
+(click:&quot;We gaan op weg!&quot;)[Langzaam aan maken we ons op voor $uitlocatie. Faye doet in eerste instantie wat moeilijk met haar schoenen aan doen (textstyle:&quot;shudder&quot;)[&quot;Maar mijn voeten doen toch wat pijn?!!&quot;], loopt ze erg te dralen.]
+
+(click-append:&quot;te dralen&quot;)[,maar uiteindelijk, met de belofte dat //klein drinken// ook mee mag, rent ze enthousiast in de richting van de auto. Na een goed verlopen autorit stappen we(if: $uitlocatie is &quot;Blijdorp&quot;)[ [[de auto uit|Blijdorp]]](elseif: $uitlocatie is &quot;Bungelland&quot;)[ [[de auto uit|Bungelland]]]]
+
+(click-replace: &quot;klein drinken&quot;)[een (live: 1s)[(either: &quot;wiki&quot;,&quot;yoki&quot;,&quot;chocolademelk&quot;)](set: $Inventaris to it + (dataset: (either: &quot;Wiki&quot;,&quot;Yoki&quot;,&quot;Chocolademelk&quot;)))]
+
+
+(click: &quot;liever naar de dierentuin&quot;)[(set: $uitlocatie to &quot;Blijdorp&quot;)]
+(click: &quot;naar Bungelland&quot;)[(set: $uitlocatie to &quot;Bungelland&quot;)]
+
+
+
+
+
+
+
+</tw-passagedata>
+<tw-passagedata pid="3" name="Menu" tags="header" position="231,204">(link:&quot;Inventaris&quot;)[(print: ...$Inventaris)]</tw-passagedata>
+<tw-passagedata pid="4" name="A header" tags="startup" position="226,337">(set: $Inventaris to (dataset:&quot;leeg&quot;))
+</tw-passagedata>
+<tw-passagedata pid="5" name="titelpagina" tags="" position="627,207">&lt;h2&gt;Queeste tegen het schreeuwmonster&lt;br&gt;&lt;br&gt;Een interactief verhaal van [Remko van der Pluijm]&lt;ik|&lt;/h2&gt;
+
+(click: ?ik)[Voor mijn liefste, opdat zij met een lach en een traan terug kan kijken naar het afgelopen jaar. [[Naar de start van het verhaal|Start]].]</tw-passagedata>
+<tw-passagedata pid="6" name="Blijdorp" tags="" position="752,356">(if: (random: 1,12) is 12)[(set: $Inventaris to it - (dataset:&quot;Toetie&quot;), $Toetielocatie to $uitlocatie)]
+//Blijdorp, Biotopia//
+Tevreden glijdt Faye van de hoogste glijbaan af. Ergens onder de glijbaan zwerven de kledingstukken van haar rond. Terwijl ik een kop koffie aan het halen ben, voel je plotseling een vreemd gevoel vanaf achteren...
+
+(if: $fototest is false)[* [[Ik kijk naar achteren om te zien wat er gebeurt.|Foto]]]
+(if: $fototest is false)[* [[Ik voel met mijn hand op mijn rug om het vervelende gevoel weg te halen.|Foto]]]
+(if: $fototest is true)[* [[Ik zoek Faye en jou op en ik wil zo snel mogelijk weg van hier. |Op weg naar huis]]]
+(if: $fototest is true)[* [[//&quot;Ik wil je even alleen spreken.&quot;// |Overleg]]]
+
+
+
+
+
+
+
+
+
+
+(click-replace: &quot;kledingstukken&quot;)[sokken en schoenen]</tw-passagedata>
+<tw-passagedata pid="7" name="Bungelland" tags="" position="966,201">(if: (random: 1,12) is 12)[(set: $Inventaris to it - (dataset:&quot;Toetie&quot;), $Toetielocatie to $uitlocatie)]
+//Bungelland//
+Tevreden speelt Faye in de ballenbak. Terwijl ik met haar aan het spelen ben en je zelf koffie aan het halen bent, voel je plotseling een vreemd gevoel vanaf achteren...
+
+(if: $fototest is false)[* [[Ik kijk naar achteren om te zien wat er gebeurt.|Foto]] ]
+(if: $fototest is false)[* [[Ik voel met mijn hand op mijn rug om het vervelende gevoel weg te halen.|Foto]] ]
+(if: $fototest is true)[* [[Ik zoek Faye en jou op en ik wil zo snel mogelijk weg van hier. |Op weg naar huis]] ]
+(if: $fototest is true)[* [[Ik wil je even alleen spreken.|Overleg]]]
+
+
+
+
+
+
+
+
+
+
+(click-replace: &quot;kledingstukken&quot;)[sokken en schoenen]</tw-passagedata>
+<tw-passagedata pid="8" name="Foto" tags="" position="945,408">(set: $fototest to true, $Inventaris to it + (dataset: &quot;Foto van Faye&quot;), $wapensbekend to false)
+In de wijde omgeving is niemand te zien die ook maar iets met je gedaan zou kunnen hebben. Als je gaat staan en je je jas uittrekt voel je een jeukend gevoel op je rug. (click: &quot;jeukend&quot;)[&#39;&#39;Blijkbaar heeft iemand een foto achter je rug gestopt!&#39;&#39; Eerst glimlach je nog wanneer je aan Faye d&#39;r rare spelletje denkt. Wanneer je de foto bekijkt, vergaat het lachen je. De foto is weliswaar van een slechte kwaliteit, maar overduidelijk is daar Faye te zien terwijl ze slaapt in een foto die je nog nooit hebt gezien. D&#39;r (link:&quot;wapens&quot;)[toverstaf en kanon (set: $wapensbekend to true)] zijn omcirkeld en in bloedrode letters staat er &quot;help&quot; geschreven.] 
+
+Wat voor een gevoel geeft je deze foto?
+
+* (link-reveal:&quot;Je hebt het gevoel dat iemand een nogal ziek spelletje met me aan het uithalen is en je hoopt dat ik niet diegene ben.&quot;)[(set: $mood to &quot;geintje&quot;)]
+* (link-reveal:&quot;Je hebt het gevoel dat Faye gevaar loopt...&quot;)[(set: $mood to &quot;gevaar&quot;)]
+* (link-reveal:&quot;Je bent geïntrigeerd, maar wel op je hoede.&quot;)[(set: $mood to &quot;interesse&quot;)]
+
+
+(click-append: &quot;Faye d&#39;r rare spelletje&quot;)[ (//Even een foto instoppen...//)]
+(link-goto: &quot;Wat moet je nu doen?&quot;, $uitlocatie))
+
+(click-append: &quot;wijde omgeving&quot;)[ (het is een rustige dinsdagochtend en we hebben het rijk zo goed als alleen in (if: $uitlocatie is &quot;Blijdorp&quot;)[Biotopia](else:)[Bungelland].]
+(click-prepend: &quot;jas&quot;)[mooie (maar zware) gele winter]</tw-passagedata>
+<tw-passagedata pid="9" name="Op weg naar huis" tags="" position="747,559">(if: $overleg is false AND random(1,8) is 8 AND &quot;Toetie&quot; is in $Inventaris)[(set: $Inventaris to it - (dataset: &quot;Toetie&quot;))] 
+(set: $aantalkliks to (random:4,7), $huidigeklik to 0, $autogevonden to false, $tijdverloren to 0)
+//Op weg naar de auto//
+
+Wanneer we $uitlocatie uitstappen, zien we een parkeerplaats gevuld met zilveren Peugeot 206 SWs.
+&lt;img src=&quot;http://www.tweedehandsspul.nl/piccache/447x340-0/90/87/97/te-koop-peugeot-206sw-quick-silver.jpg&quot;&gt;
+
+Compleet verbluft kijken we naar de omgeving.
+
+(mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]  (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]] (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]  (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]
+
+(mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]   (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]     (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]    (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]  (mouseover:&quot;Dit is onze auto!&quot;)[(set: $autogevonden to true) Eindelijk vinden we echt onze auto terug. We kunnen [[vertrekken|In de auto naar huis]].]
+(mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]
+(mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]  (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]  (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]  (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]] (mouseover:&quot;Dit is onze auto!&quot;)[(if: $autogevonden is false)[//(either:&quot;Die rijdt gewoon weg!&quot;,&quot;Die staat gewoon stil!&quot;,&quot;Dat is mijn mooie stoel!&quot;,&quot;Die heeft onze kleur!&quot;)//]]
+</tw-passagedata>
+<tw-passagedata pid="10" name="Overleg" tags="" position="1075,606">(set: $overleg to true)
+Je wacht onrustig tot ik terug ben en laat Faye even verder spelen.
+
+Wanneer ik terug ben haal je diep adem, waarna je:
+
+* [de foto laat zien die je gevonden hebt en mij vraagt naar mijn mening.]&lt;tonen|
+* [je vertelt van de foto en mij eerst probeert te kalmeren.]&lt;kalmeren|
+(if: $wapensbekend)[* de foto bij de hand neemt en wijst me op het feit dat de wapens omcirkeld zijn.]
+
+(click: ?tonen)[Met open mond kijk ik naar de foto. (if: $mood is not &quot;geintje&quot;)[Je ziet aan mijn gezicht dat mijn ademhaling begint te versnellen en ik weer tic-matig naar mijn borstkas grijp. Nog net op tijd weet je me te kalmeren.](else:)[Je probeert te bespeuren of ik degene ben die dit geintje uithaal, maar je hebt het gevoel dat mijn verbazing echt is.] Dan, wanneer ik even rustig, maar overduidelijk op mijn hoede, ben, vraag ik: //&quot;Waar is Faye? Ik wil [[hier vandaan|Op weg naar huis]].&quot; (if: $mood is &quot;interesse&quot;)[Of wil jij soms (link-goto:&quot;hier blijven&quot;,$uitlocatie)]?]
+(click: ?kalmeren)[Vertwijfeld kijk ik naar de foto. //&quot;Wel ziek dat ze die foto zo aan jou op deze manier bezorgen. Normaal had ik daar wel mee kunnen lachen, maar dit is veel te dicht bij ons.&quot;// (if: $mood is &quot;geintje&quot;)[Je probeert te bespeuren of ik niet degene kan zijn... maar mijn koude blik spreekt hierin boekdelen.] //&quot;Zoveel mensen kunnen toch niet de beschikking hebben tot deze foto? Ik wil [[hier vandaan en uitzoeken wat er aan de hand is|Op weg naar huis]].//(set: $mood to &quot;interesse&quot;)]
+(click: &quot;wijst me op het feit dat de wapens omcirkeld zijn&quot;)[Een ongewone kalmte wordt meester van me terwijl je me wijst op het omcirkelde pistool en toverstaf. //&quot;Waarom zou iemand dit doen?&quot;// Vertwijfeld kijken we mekaar aan. (if: $mood is not &quot;interesse&quot;)[//&quot;Laten we misschien [[toch maar naar huis gaan|Op weg naar huis]]&quot;// stel ik voor.](else:)[//&quot;Ik zie aan je gezicht dat je nu wilt weten wat er aan de hand is. Maar volgens mij maken we daar meer kans op wanneer we naar [[huis toe gaan|Op weg naar huis]].// Zwijgend lopen we richting de auto.]]
+
+
+
+
+
+
+
+
+
+(click-append:</tw-passagedata>
+<tw-passagedata pid="11" name="Tijd verloren" tags="" position="550,558">(set: $tijdverloren to 1)</tw-passagedata>
+<tw-passagedata pid="12" name="Einde" tags="" position="191,534">Dit is het einde van het verhaal.
+
+$eindtekst
+
+(link:&quot;Herstart?&quot;)[(restart:)]</tw-passagedata>
+<tw-passagedata pid="13" name="In de auto naar huis" tags="" position="749,707">(if: &quot;Toetie&quot; is not in $Inventaris and $tijdverloren is 0)[Faye, doodop van een voor haar leuke dag, vraagt halverwege de rit, met een zachte stem: (textstyle:&quot;condense&quot;)[&quot;Mama, mag ik Toetie?&quot;] Wanneer je in je tas kijkt, zie je dat we nota bene deze keer hem verloren zijn. Besluit je om [[Terug te rijden|Tijd verloren]] of om door te rijden.]
+(if: $tijdverloren &gt;= 1)[(replace: &quot;rijden&quot;)[racen](replace: &quot;rijd&quot;)[race]]
+We rijden naar huis, 
+
+
+
+
+
+
+
+
+(click-append: &quot;om door te rijden&quot;)[(set: $eindtekst to &quot;Toetie is verloren en daarmee is de hoop verloren.&quot;)(go-to:&quot;Einde&quot;)]
+</tw-passagedata>
+</tw-storydata>
