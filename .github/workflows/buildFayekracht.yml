@@ -20,7 +20,7 @@ jobs:
         run: |
           go get github.com/tmedwards/tweego
           export PATH=$PATH:$(go env GOPATH)/bin
-          tweego Fayekracht.twee -o Fayekracht.html
+          tweego Fayekrachten.twee -o Fayekrachten.html
 
 
       - name: Deploy
