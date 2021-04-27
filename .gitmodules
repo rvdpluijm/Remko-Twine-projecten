@@ -1,0 +1,3 @@
+[submodule "tweego"]
+	path = tweego
+	url = https://github.com/tmedwards/tweego.git
