@@ -1,0 +1,44 @@
+:: StoryTitle
+De friet bakken als het heet is
+
+
+:: StoryData
+{
+	"ifid": "E66F0659-24FE-4A77-AB1F-C40E518DB17C",
+	"format": "Chapbook",
+	"format-version": "1.2.0",
+	"start": "Start",
+	"zoom": 1
+}
+
+
+:: Story JavaScript [script]
+engine.extend('1.0.0', () => {
+    config.template.inserts = [{
+        match: /^textbox/i,
+        render(characterName, props) {
+          let imgPath = ''
+
+          if (characterName === "Rocco") {
+            imgPath = "assets/images/Rocco.jpg";
+          } else if (characterName === "man") {
+            imgPath = "assets/images/man.png";
+          } else if (characterName === "vrouw") {
+            imgPath = "assets/images/vrouw.png";
+          }
+
+          return `<div class="textbox"><img class="tb-avatar" src="${imgPath}" width="128" height="128"><div class="tb-name">${characterName}</div><div class="tb-dialogue">${props.dialogue}</div></div>`;
+        }
+        
+    }, ...config.template.inserts];
+});
+
+
+:: Start {"position":"412,189","size":"100,100"}
+room: ''
+maand: '2'
+kentFranchiser: false
+kentRocco: false
+__
+
+
